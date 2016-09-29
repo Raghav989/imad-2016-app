@@ -8,12 +8,117 @@
             <img src="http://keshavkumar745.cabanova.com/files/jisb-6zmdsktyipy0-75zwl.jpg" class="img-medium"/>
         </div>
         <br>
-        <div class="center text-big bold">
-            Hi! I am Raghav and this is my first webapp
+         <style>
+        #batteryBody {
+            float: left;
+            width: 200px;
+            height: 75px;
+            border: 10px #CCC solid;
+        }
+
+        .container {
+            width: 240px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+        }
+
+        .batteryEnd {
+            float: left;
+            height: 95px;
+            width: 15px;
+        }
+
+            .batteryEnd div {
+                width: 15px;
+                height: 35px;
+                margin-top: 30px;
+                margin-left: 5px;
+                background-color: #CCC;
+            }
+
+        #indicator {
+            height: 100%;
+            width: 50%;
+        }
+
+            #indicator.charging {
+                background-color: #BFFF00;
+            }
+
+            #indicator.notCharging {
+                background-color: #FF66CC;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="batteryBody">
+            <div id="indicator">
+
+            </div>
         </div>
-        I am White Hat Hacker Raghav and I am also a Musician 
-        <br> 
-        I have passed class 10th from 95% in Computer Science
+        <div class="batteryEnd">
+            <div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var battery;
+
+        navigator.getBattery()
+            .then(function (b) {
+                battery = b;
+                handleBattery();
+            }
+        );
+
+        var batteryIndicator = document.querySelector("#indicator");
+
+        function handleBattery() {
+            if (battery) {
+                battery.addEventListener("chargingchange", updateBatteryNotification);
+                battery.addEventListener("levelchange", updateBatteryNotification);
+                updateBatteryNotification();
+            }
+        }
+
+        function updateBatteryNotification() {
+	        // draw battery level
+	        batteryIndicator.style.width = battery.level * 100 + "%";
+
+	        // check if battery is charging
+	        if (battery.charging) {
+		        batteryIndicator.className = "charging";
+	        } else {
+		        batteryIndicator.className = "notCharging";
+	        }
+        }
+    </script>
+     <br> 
+     <br> 
+     <br> 
+     <br>
+     <div class="c">c</div>
+<style>
+.c{
+  background:white;
+  width:1000px;
+  height:1000px;
+  cursor:url
+
+(http://raghavsoftwareindustries.net16.net/gallery_gen/4ef815bff3228807fbb87f7fc5d30562_50x60.p
+
+ng), auto;
+}
+</style>
+     <script type="text/javascript" src="http://100widgets.com/js_data.php?id=106"><div style="padding-bottom:6px;color:#FFFFFF;font-family:arial,helvetica,sans-serif;font-size:11.4px;font-weight:bold">RAGHAV IGNITOR R+ CALENDAR</div></script>
+<font size=4>Hi Friends This Is My Webapp</font><br> 
+  
+
         <script type="text/javascript" src="/ui/main.js">
         </script>
     </body>
